@@ -7,10 +7,9 @@
 # @email: mirkat.ding@gmail.com       #
 # @date created: 2023/1/10            #
 # @last modified by: Shiuan-Yun Ding  #
-# @last modified date: 2023/1/10       #
+# @last modified date: 2023/2/5       #
 # ################################### #
 
-import json
 from liberty import liberty
 
 lib = liberty(filepath='./test.json')

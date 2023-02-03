@@ -7,7 +7,7 @@
 # @email: mirkat.ding@gmail.com       #
 # @date created: 2023/1/4             #
 # @last modified by: Shiuan-Yun Ding  #
-# @last modified date: 2023/1/10      #
+# @last modified date: 2023/2/5       #
 # ################################### #
 
 import os
@@ -53,21 +53,18 @@ class cell(group):
         return {pinname: pin(pinname, self.content['pin'][pinname]) for pinname in pinnames}
 
     def list_input_pins(self):
-        pins = self.list_pins()
         return [k for k, v in self.content['pin'].items() if v['direction'] == 'input']
 
     def get_input_pins(self):
         return self.get_pins(self.list_input_pins())
     
     def list_output_pins(self):
-        pins = self.list_pins()
         return [k for k, v in self.content['pin'].items() if v['direction'] == 'output']
 
     def get_output_pins(self):
         return self.get_pins(self.list_input_pins())
 
     def list_inout_pins(self):
-        pins = self.list_pins()
         return [k for k, v in self.content['pin'].items() if v['direction'] == 'inout']
 
     def get_inout_pins(self):
