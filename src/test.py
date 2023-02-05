@@ -12,6 +12,7 @@
 
 from liberty import Liberty
 
+
 lib = Liberty(filepath='./test.json')
 print('\n--------------------------------------\n')
 

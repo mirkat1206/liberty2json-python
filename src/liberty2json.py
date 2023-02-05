@@ -14,6 +14,7 @@ import os
 import glob
 import json
 
+
 class liberty2json():
     """Convert Liberty library files to JSON files.
     

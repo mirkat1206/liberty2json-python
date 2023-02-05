@@ -13,6 +13,7 @@
 import os
 import json
 
+
 class Group():
     def __init__(self, name='', content={}):
         self.content = content

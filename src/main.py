@@ -10,9 +10,9 @@
 # @last modified date: 2023/1/9       #
 # ################################### #
 
-
 import argparse
 from liberty2json import liberty2json
+
 
 parser = argparse.ArgumentParser(description='Turn liberty format file(s) into json format file(s).')
 parser.add_argument('--libfile', type=str, help='filepath of a liberty format file')
