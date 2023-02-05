@@ -10,9 +10,9 @@
 # @last modified date: 2023/2/5       #
 # ################################### #
 
-from liberty import liberty
+from liberty import Liberty
 
-lib = liberty(filepath='./test.json')
+lib = Liberty(filepath='./test.json')
 print('\n--------------------------------------\n')
 
 print(lib.name)
@@ -23,22 +23,22 @@ print(lib.list_cells())
 print(lib.get_cells())
 print('\n--------------------------------------\n')
 
-cel = lib.get_cell(lib.list_cells()[0])
-print(cel.name)
-print(cel.list_attributes())
-print(cel.get_attribute('cell_footprint'))
-print(cel.get_attributes(['cell_footprint', 'area']))
-print(cel.list_pins())
-print(cel.get_pins())
-print(cel.list_input_pins())
-print(cel.get_input_pins())
-print(cel.list_output_pins())
-print(cel.get_output_pins())
-print(cel.list_inout_pins())
+cell = lib.get_cell(lib.list_cells()[0])
+print(cell.name)
+print(cell.list_attributes())
+print(cell.get_attribute('cell_footprint'))
+print(cell.get_attributes(['cell_footprint', 'area']))
+print(cell.list_pins())
+print(cell.get_pins())
+print(cell.list_input_pins())
+print(cell.get_input_pins())
+print(cell.list_output_pins())
+print(cell.get_output_pins())
+print(cell.list_inout_pins())
 print('\n--------------------------------------\n')
 
-pinn = cel.get_pin(cel.list_output_pins()[0])
-print(pinn.name)
-print(pinn.list_attributes())
-print(pinn.get_attribute('related_power_pin'))
+pin = cell.get_pin(cell.list_output_pins()[0])
+print(pin.name)
+print(pin.list_attributes())
+print(pin.get_attribute('related_power_pin'))
 print('\n--------------------------------------\n')

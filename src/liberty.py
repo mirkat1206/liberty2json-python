@@ -13,7 +13,7 @@
 import os
 import json
 
-class group():
+class Group():
     def __init__(self, name='', content={}):
         self.content = content
         self.name = name
@@ -32,12 +32,12 @@ class group():
         return {k: v for k, v in self.content.items() if k in attrs}
 
 
-class pin(group):
+class Pin(Group):
     def __init__(self, name='', content={}):
         super().__init__(name, content)
 
 
-class cell(group):
+class Cell(Group):
     def __init__(self, name='', content={}):
         super().__init__(name, content)
 
@@ -45,12 +45,12 @@ class cell(group):
         return [*self.content['pin'].keys()]
 
     def get_pin(self, pinname=''):
-        return pin(pinname, self.content['pin'][pinname])
+        return Pin(pinname, self.content['pin'][pinname])
 
     def get_pins(self, pinnames=[]):
         if pinnames == []:
             pinnames = self.list_pins()
-        return {pinname: pin(pinname, self.content['pin'][pinname]) for pinname in pinnames}
+        return {pinname: Pin(pinname, self.content['pin'][pinname]) for pinname in pinnames}
 
     def list_input_pins(self):
         return [k for k, v in self.content['pin'].items() if v['direction'] == 'input']
@@ -71,7 +71,7 @@ class cell(group):
         return self.get_pins(self.list_input_pins())
     
 
-class liberty(group):
+class Liberty(Group):
     def __init__(self, filepath=''):
         if filepath != '' and os.path.exists(filepath) == False:
             raise AssertionError(f'Error: {filepath} does not exist')
@@ -90,9 +90,9 @@ class liberty(group):
         return [*self.content['cell'].keys()]
 
     def get_cell(self, cellname=''):
-        return cell(cellname, self.content['cell'][cellname])
+        return Cell(cellname, self.content['cell'][cellname])
 
     def get_cells(self, cellnames=[]):
         if cellnames == []:
             cellnames = self.list_cells()
-        return {cellname: cell(cellname, self.content['cell'][cellname]) for cellname in cellnames}
+        return {cellname: Cell(cellname, self.content['cell'][cellname]) for cellname in cellnames}
