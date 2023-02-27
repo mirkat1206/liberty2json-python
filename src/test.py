@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # ################################### #
 # File: test.py                       #
-# Version: 1.0                        #
+# Version: 1.0.0                      #
 # @author: Shiuan-Yun Ding            #
 # @email: mirkat.ding@gmail.com       #
 # @date created: 2023/1/10            #
